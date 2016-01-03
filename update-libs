@@ -3,7 +3,7 @@
 echo "Cleanup...";
 rm -fr bower_components/
 echo "Downloading..."
-bower install bootstrap angular-route angular-sanitize
+bower install bootstrap angular-route angular-sanitize markdown-js
 echo "Removing old files..."
 rm -fr app/static/lib/*
 echo "Creating dirs..."
@@ -12,9 +12,12 @@ mkdir app/static/lib/jquery/
 mkdir app/static/lib/bootstrap/
 mkdir app/static/lib/fonts/
 mkdir app/static/lib/angularjs/plugins/angular-sanitize/
+mkdir app/static/lib/markdown-js/
 echo "Copying files into static/lib..."
 # angular
 cp bower_components/angular/angular.js app/static/lib/angularjs/
+# angular-sanitize
+cp bower_components/angular-sanitize/angular-sanitize.js app/static/lib/angularjs/plugins/angular-sanitize/
 # angular-route
 cp bower_components/angular-route/angular-route.js app/static/lib/angularjs/plugins/angular-route/
 # bootstrap
@@ -24,6 +27,8 @@ cp bower_components/bootstrap/dist/js/bootstrap.js app/static/lib/bootstrap/
 cp -R bower_components/bootstrap/fonts/ app/static/lib/fonts/
 # jquery
 cp bower_components/jquery/dist/jquery.js app/static/lib/jquery/
+# markdown-js
+cp bower_components/markdown-js/dist/markdown.js app/static/lib/markdown-js
 
 echo "Removing bower_components/..."
 rm -fr bower_components/

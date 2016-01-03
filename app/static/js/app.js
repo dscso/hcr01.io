@@ -1,32 +1,21 @@
 var app = angular.module('app', [
   'ngRoute',
+  'ngSanitize'
 ]);
 
 app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'templates/home.html',
-        name : "home",
-      }).when('/about', {
-        templateUrl: 'templates/about.html',
-        name : "about",
-      })
-      .otherwise({
-        redirectTo: "/"
+      .when('/:url', {
+        templateUrl: 'templates/template.html',
+        controller: 'templateCtrl'
+      }).otherwise({
+        redirectTo: "/home"
       });
 }]);
 
-app.factory('routeNavigation', function($route, $location) {
-  var routes = [];
-  angular.forEach($route.routes, function (route, path) {
-    if (route.name) { // if name is given show it in the menu
-      routes.push({
-        path: path,
-        name: route.name
-      });
-    }
-  });
+app.factory('routeNavigation', function($location) {
+  var routes = settings.routes;
   return {
     routes: routes,
     activeRoute: function (route) {
@@ -46,3 +35,13 @@ app.directive('navigation', function (routeNavigation) {
         }
     };
 });
+
+app.controller('templateCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('md/' + $routeParams.url + '.md').success(function(data) {
+      $scope.html = markdown.toHTML(data);
+    }).error(function (err) {
+      $scope.html = "<h2>404 - Not found</h2>";
+    });
+    $scope.url = $routeParams.url;
+}]);
