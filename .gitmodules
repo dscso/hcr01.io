@@ -1,0 +1,12 @@
+[submodule "app/static/lib/angular.js"]
+	path = app/static/lib/angular.js
+	url = https://github.com/components/angular.js.git
+[submodule "app/static/lib/bootstrap"]
+	path = app/static/lib/bootstrap
+	url = https://github.com/components/bootstrap.git
+[submodule "app/static/lib/jquery"]
+	path = app/static/lib/jquery
+	url = https://github.com/components/jquery.git
+[submodule "app/static/lib/markdown"]
+	path = app/static/lib/markdown
+	url = https://github.com/evilstreak/markdown-js.git
