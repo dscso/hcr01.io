@@ -6,11 +6,13 @@ var app = angular.module('app', [
 app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/:url', {
-        templateUrl: 'templates/template.html',
+      .when('/md/:url', {
+        templateUrl: 'templates/md.html',
         controller: 'templateCtrl'
+      }).when('/', {
+        templateUrl: 'templates/home.html',
       }).otherwise({
-        redirectTo: "/home"
+        redirectTo: "/"
       });
 }]);
 
@@ -38,7 +40,7 @@ app.directive('navigation', function (routeNavigation) {
 
 app.controller('templateCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
-    $http.get('md/' + $routeParams.url + '.md').success(function(data) {
+    $http.get('content/md/' + $routeParams.url + '.md').success(function(data) {
       $scope.html = markdown.toHTML(data);
     }).error(function (err) {
       $scope.html = "<h2>404 - Not found</h2>";

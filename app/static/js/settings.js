@@ -2,11 +2,11 @@ var settings = {
   "routes" : [
     {
       "name":"Home",
-      "path":"/home"
+      "path":"/"
     },
     {
       "name":"About",
-      "path":"/about"
+      "path":"/md/about"
     }
   ]
 }
