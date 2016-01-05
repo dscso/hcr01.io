@@ -9,4 +9,4 @@
 	url = https://github.com/components/jquery.git
 [submodule "app/static/lib/markdown"]
 	path = app/static/lib/markdown
-	url = https://github.com/evilstreak/markdown-js.git
+	url = https://github.com/dscso/markdown-js.git
