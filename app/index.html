@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html ng-app='app'>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
 
-    <title>hcr01.io</title>
-    <link rel="icon" href="static/img/icons/icon.png" type="image/png">
-    <link rel="stylesheet" href="static/css/app.css"></link>
-    <link rel="stylesheet" href="static/lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="static/lib/bootstrap/css/bootstrap-theme.css">
-  </head>
-  <body>
-      <navigation></navigation>
-      <div ng-view></div>
+		<title>hcr01.io</title>
+		<link rel="icon" href="static/img/icons/icon.png" type="image/png">
+		<link rel="stylesheet" href="static/css/app.css"></link>
+		<link rel="stylesheet" href="static/lib/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="static/lib/bootstrap/css/bootstrap-theme.css">
+	</head>
+	<body>
+			<navigation></navigation>
+			<div class="container">
+				<div ng-view></div>
+			</div>
 
-      <script src="static/lib/angular.js/angular.js"></script>
-      <script src="static/lib/angular.js/angular-route.js"></script>
-      <script src="static/lib/angular.js/angular-sanitize.js"></script>
-      <script src="static/lib/markdown/dist/markdown.js"></script>
-      <script src="static/lib/jquery/jquery.js"></script>
-      <script src="static/lib/bootstrap/js/bootstrap.js"></script>
+			<script src="static/lib/angular.js/angular.js"></script>
+			<script src="static/lib/angular.js/angular-route.js"></script>
+			<script src="static/lib/angular.js/angular-sanitize.js"></script>
+			<script src="static/lib/markdown/dist/markdown.js"></script>
+			<script src="static/lib/jquery/jquery.js"></script>
+			<script src="static/lib/bootstrap/js/bootstrap.js"></script>
 
-      <script src="static/js/settings.js"></script>
-      <script src="static/js/app.js"></script>
-  </body>
+			<script src="static/js/settings.js"></script>
+			<script src="static/js/app.js"></script>
+	</body>
 </html>
