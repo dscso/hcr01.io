@@ -33,6 +33,10 @@ app.directive('navigation', function (routeNavigation) {
 		templateUrl: "templates/navigation.html",
 		controllerAs: "navCtrl",
 		controller: function ($scope) {
+			$scope.showMobileNav = false;
+			$scope.showMobileNavChange = function () {
+				$scope.showMobileNav = !$scope.showMobileNav;
+			}
 			$scope.routes = routeNavigation.routes;
 			$scope.activeRoute = routeNavigation.activeRoute;
 		}
